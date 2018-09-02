@@ -1,11 +1,57 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title>
-      General
+      Zertifikate
     </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="outer-content">
+
+  <!--
+    <ion-searchbar
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  -->
+
+  <ion-searchbar></ion-searchbar>
+  <ion-list>
+    <ion-item-group *ngFor="let certificateGroup of certificateGroups">
+
+
+
+      <ion-item-divider color="light">{{ certificateGroup.type }}</ion-item-divider>
+      <ion-card *ngFor="let certificate of certificateGroup.certificates">
+        <ion-item>
+          <ion-avatar item-start style="border-radius: 0">
+            <img src="assets/imgs/vertrag_3x.png" style="border-radius: 0; height: auto; width: 58px">
+          </ion-avatar>
+          <h2>{{ certificate.name }}</h2>
+          <p>{{ certificate.info }}</p>
+          <p>{{ certificate.issuing_date }}</p>
+          <p>{{ certificate.issuer }}</p>
+        </ion-item>
+      </ion-card>
+    </ion-item-group>
+  </ion-list>
 
 </ion-content>
