@@ -5,10 +5,10 @@ import {CertificateStatus} from "../../interfaces/enums/certificateStatus";
 import {CertificateGroup} from "../../interfaces/certificateGroup";
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-library',
+  templateUrl: 'library.html'
 })
-export class AboutPage {
+export class LibraryPage {
 
   certificateGroups: CertificateGroup[] = [
     {
@@ -36,14 +36,7 @@ export class AboutPage {
         issuing_date: "26.07.2013",
         issuer: "WIFI Österreich",
         status: CertificateStatus.valid
-      },
-        {
-          name: "Unternehmerprüfung",
-          info: "",
-          issuing_date: "29.08.2018",
-          issuer: "",
-          status: CertificateStatus.auditing
-        }]
+      }]
     },
     {
       type: CertificateType.authorization,
