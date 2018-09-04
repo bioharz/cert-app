@@ -15,11 +15,11 @@
 
   <ion-list>
     <ion-item-divider>
-      <ion-input type="text" placeholder="Transaction ID" clearInput="true"></ion-input>
+      <ion-input type="text" placeholder="Transaction ID" clearInput="true" [(ngModel)]="manual_tx_id"></ion-input>
     </ion-item-divider>
 
     <div style="text-align: center">
-      <button ion-button color="primary">Validate</button>
+      <button ion-button color="primary" (click)="validate_manual_tx_id()">Validate</button>
     </div>
 
   </ion-list>

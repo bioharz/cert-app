@@ -26,20 +26,9 @@
 
 <ion-content class="outer-content">
 
-  <!--
-    <ion-searchbar
-      [(ngModel)]="myInput"
-      [showCancelButton]="shouldShowCancel"
-      (ionInput)="onInput($event)"
-      (ionCancel)="onCancel($event)">
-    </ion-searchbar>
-  -->
-
   <ion-searchbar></ion-searchbar>
   <ion-list>
     <ion-item-group *ngFor="let certificateGroup of certificateGroups">
-
-
 
       <ion-item-divider color="light">{{ certificateGroup.type }}</ion-item-divider>
       <ion-card *ngFor="let certificate of certificateGroup.certificates">
