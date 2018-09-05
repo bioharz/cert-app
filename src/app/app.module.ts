@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {ValidatePage} from "../pages/validate/validate";
 import { ValidatorProvider } from '../providers/validator/validator';
 import {HttpClientModule} from "@angular/common/http";
+import {ValidatedPage} from "../pages/validated/validated";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
     SettingsPage,
     ProfilePage,
     TabsPage,
-    ValidatePage
+    ValidatePage,
+    ValidatedPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import {HttpClientModule} from "@angular/common/http";
     SettingsPage,
     ProfilePage,
     TabsPage,
-    ValidatePage
+    ValidatePage,
+    ValidatedPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Validierung</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-list no-lines *ngIf="streamItem">
+
+
+    <ion-item><h1>Zertifikats-Daten:</h1></ion-item>
+    <ion-item *ngFor="let item of  streamItem.item.keys">
+      {{ item }}
+    </ion-item>
+
+    <ion-item><h1>Blockchain-Daten:</h1></ion-item>
+    <ion-item class="fix-ion-label-white-space">Austeller: {{ streamItem.item.publishers }}</ion-item>
+    <ion-item>Blockzeit: {{ streamItem.item.blocktime }}</ion-item>
+    <ion-item>Bestätigungen: {{ streamItem.item.confirmations }}</ion-item>
+    <ion-item>Offchain: {{ streamItem.item.offchain }}</ion-item>
+    <ion-item>Verfügbar: {{ streamItem.item.available }}</ion-item>
+    <ion-item class="fix-ion-label-white-space">TX-ID: {{ streamItem.item.txid }}</ion-item>
+
+  </ion-list>
+
+</ion-content>

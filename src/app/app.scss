@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,11 +14,16 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-
 .fix-content-center {
   .scroll-content {
     justify-content: center;
     display: flex;
     align-items: center;
+  }
+}
+
+.fix-ion-label-white-space {
+  ion-label {
+    white-space: initial;
   }
 }
