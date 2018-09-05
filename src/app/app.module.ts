@@ -15,6 +15,9 @@ import { ValidatorProvider } from '../providers/validator/validator';
 import {HttpClientModule} from "@angular/common/http";
 import {ValidatedPage} from "../pages/validated/validated";
 
+import { QRScanner } from '@ionic-native/qr-scanner';
+import {QrScannerPage} from "../pages/qr-scanner/qr-scanner";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +26,8 @@ import {ValidatedPage} from "../pages/validated/validated";
     ProfilePage,
     TabsPage,
     ValidatePage,
-    ValidatedPage
+    ValidatedPage,
+    QrScannerPage
   ],
   imports: [
     BrowserModule,
@@ -38,13 +42,15 @@ import {ValidatedPage} from "../pages/validated/validated";
     ProfilePage,
     TabsPage,
     ValidatePage,
-    ValidatedPage
+    ValidatedPage,
+    QrScannerPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ValidatorProvider
+    ValidatorProvider,
+    QRScanner
   ]
 })
 export class AppModule {}

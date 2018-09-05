@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import {ValidatorProvider} from "../../providers/validator/validator";
 import {ValidatedPage} from "../validated/validated";
 import {StreamItem} from "../../interfaces/streamItem";
+import {QrScannerPage} from "../qr-scanner/qr-scanner";
 
 
 @Component({
@@ -11,7 +12,10 @@ import {StreamItem} from "../../interfaces/streamItem";
 })
 export class ValidatePage {
 
-  manual_tx_id: string;
+  txid: any; //usuay.. it's a hex number... buy the output of the QR scanner qr scanner output is a string and the were no build in hex parser so far...
+
+  node:string = "multichain.shokri.at"; //not in use yet
+  chain:string = "cec-pc1"; //not in use yet
 
   constructor(public navCtrl: NavController, private validatorProvider: ValidatorProvider) {
   }
@@ -21,7 +25,7 @@ export class ValidatePage {
   }
 
   validate_manual_tx_id() {
-    this.validatorProvider.validateTxId(this.manual_tx_id).then(response => {
+    this.validatorProvider.validateTxId(this.txid).then(response => {
       //console.log(response);
       if (this.isStreamItem(response)) {
         let streamItem: StreamItem = response;
@@ -40,6 +44,16 @@ export class ValidatePage {
 
   isStreamItem(object: any): object is StreamItem {
     return true;
+  }
+
+  openQrScanner() {
+    console.log("try to open qr-scanner ");
+    new Promise((resolve, reject) => {
+      this.navCtrl.push(QrScannerPage, {resolve: resolve});
+    }).then(input => {
+
+      this.txid = input;
+    });
   }
 
 }

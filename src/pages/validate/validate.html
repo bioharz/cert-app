@@ -4,19 +4,37 @@
       Prüfen
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="openQrScanner()">
         <ion-icon name="qr-scanner"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="fix-content-center">
+<ion-content padding>
 
   <ion-list>
-    <ion-item-divider>
-      <ion-input type="text" placeholder="Transaction ID" clearInput="true" [(ngModel)]="manual_tx_id"></ion-input>
-    </ion-item-divider>
+
+
+    <ion-item>
+      <ion-label>Node</ion-label>
+      <ion-select [(ngModel)]="node">
+        <ion-option value="multichain.shokri.at">multichain.shokri.at</ion-option>
+        <ion-option value="test.baumann.at">test.baumann.at</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Chain</ion-label>
+      <ion-select [(ngModel)]="chain">
+        <ion-option value="cec-pc1">cec-pc1</ion-option>
+        <ion-option value="more">more chains coming soon</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Transaction ID" clearInput="true" [(ngModel)]="txid"></ion-input>
+    </ion-item>
 
     <div style="text-align: center">
       <button ion-button color="primary" (click)="validate_manual_tx_id()">Validate</button>
