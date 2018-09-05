@@ -3,6 +3,8 @@ import {NavController} from 'ionic-angular';
 import {CertificateType} from "../../interfaces/enums/certificateType";
 import {CertificateStatus} from "../../interfaces/enums/certificateStatus";
 import {CertificateGroup} from "../../interfaces/certificateGroup";
+import {CertificatePage} from "../certificate/certificate";
+import {Certificate} from "../../interfaces/certificate";
 
 @Component({
   selector: 'page-library',
@@ -63,6 +65,16 @@ export class LibraryPage {
 
   constructor(public navCtrl: NavController) {
 
+  }
+
+  certificateExample(certificate: Certificate){
+
+    //QUICK AND DIRTY
+    if(certificate.name == "Stahlschweißer/in") {
+    this.navCtrl.push(CertificatePage);
+    } else {
+      console.log("Stahlschweißer/in")
+    }
   }
 
 }

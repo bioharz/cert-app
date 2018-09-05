@@ -32,7 +32,7 @@
 
       <ion-item-divider color="light">{{ certificateGroup.type }}</ion-item-divider>
       <ion-card *ngFor="let certificate of certificateGroup.certificates">
-        <ion-item>
+        <button ion-item (click)="certificateExample(certificate)">
           <ion-avatar item-start style="border-radius: 0">
             <img src="assets/imgs/vertrag_3x.png" style="border-radius: 0; height: auto; width: 58px">
           </ion-avatar>
@@ -40,7 +40,7 @@
           <p>{{ certificate.info }}</p>
           <p>{{ certificate.issuing_date }}</p>
           <p>{{ certificate.issuer }}</p>
-        </ion-item>
+        </button>
       </ion-card>
     </ion-item-group>
   </ion-list>

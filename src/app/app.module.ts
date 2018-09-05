@@ -17,6 +17,7 @@ import {ValidatedPage} from "../pages/validated/validated";
 
 import { QRScanner } from '@ionic-native/qr-scanner';
 import {QrScannerPage} from "../pages/qr-scanner/qr-scanner";
+import {CertificatePage} from "../pages/certificate/certificate";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {QrScannerPage} from "../pages/qr-scanner/qr-scanner";
     TabsPage,
     ValidatePage,
     ValidatedPage,
-    QrScannerPage
+    QrScannerPage,
+    CertificatePage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import {QrScannerPage} from "../pages/qr-scanner/qr-scanner";
     TabsPage,
     ValidatePage,
     ValidatedPage,
-    QrScannerPage
+    QrScannerPage,
+    CertificatePage
   ],
   providers: [
     StatusBar,
